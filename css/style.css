@@ -1,0 +1,781 @@
+/********** Template CSS **********/
+:root {
+    --primary: #4CDA64;
+    --secondary: #FFF0E6;
+    --light: #F8F8F9;
+    --dark: #001D23;
+    --light-green: #c2d4c5;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.border-primary {
+    border-color: var(--primary) !important;
+}
+
+.bg-light-green {
+    background-color: var(--light-green) ; 
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+/* Solid brand buttons */
+.btn.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.btn.btn-primary:hover {
+    background: #3ec759; /* slightly darker green for hover */
+    border-color: #3ec759;
+    color: #fff;
+}
+
+/* Outline buttons */
+.btn.btn-outline-primary {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn.btn-outline-primary:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+.btn-arrow {
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+    background: #fff;
+    transition: 0.3s;
+}
+
+.btn-arrow:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+
+
+/*** Navbar ***/
+.fixed-top {
+    transition: .5s;
+}
+
+.top-bar {
+    height: 45px;
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #FFFFFF;
+    font-weight: 500;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.brand-logo span:first-child {
+    color: var(--primary);
+}
+.brand-logo span:last-child {
+    color: #fff;
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav {
+        margin-top: 10px;
+        border-top: 1px solid rgba(0, 0, 0, .07);
+        background: var(--dark);
+    }
+
+    .navbar .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        transition: .5s;
+        opacity: 0;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 29, 35, 0.425);
+    z-index: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 15%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--dark);
+    border: 12px solid var(--dark);
+    border-radius: 3rem;
+}
+/* === Fullscreen Carousel Height Fix === */
+#header-carousel,
+#header-carousel .carousel-inner,
+#header-carousel .carousel-item {
+    height: 100vh; 
+    min-height: 600px; 
+}
+
+#header-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.page-header {
+    padding-top: 13rem;
+    padding-bottom: 7rem;
+    background: linear-gradient(rgba(0, 29, 35, 0.336), rgba(0, 29, 35, .8)), url(../img/Digitalliteracycohort1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-header .breadcrumb-item+.breadcrumb-item::before {
+    color: #999999;
+}
+
+
+/*** Causes ***/
+.causes-item .progress {
+    height: 5px;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.causes-item .progress .progress-bar {
+    position: relative;
+    overflow: visible;
+    width: 0px;
+    border-radius: 0;
+    transition: 5s;
+}
+
+.causes-item .progress .progress-bar span {
+    position: absolute;
+    top: -7px;
+    right: 0;
+    width: 40px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+.causes-item .causes-overlay {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .5);
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.causes-item:hover .causes-overlay {
+    height: 100%;
+    opacity: 1;
+}
+
+
+/*** Service ***/
+.service-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .06);
+}
+
+
+/*** Donate ***/
+.donate {
+    background: rgba(0, 29, 35, .8);
+}
+
+.btn-group .btn-light:hover,
+.btn-group input[type="radio"]:checked+label {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+
+/*** Team ***/
+.team-item img {
+    position: relative;
+    top: 0;
+    transition: .5s;
+}
+
+.team-item:hover img {
+    top: -30px;
+}
+
+.team-item .team-text {
+    position: relative;
+    height: 100px;
+    transition: .5s;
+}
+
+.team-item:hover .team-text {
+    margin-top: -60px;
+    height: 160px;
+}
+
+.team-item .team-text .team-social {
+    opacity: 0;
+    transition: .5s;
+}
+
+.team-item:hover .team-text .team-social {
+    opacity: 1;
+}
+
+.team-item .team-social .btn {
+    display: inline-flex;
+    color: var(--primary);
+    background: #FFFFFF;
+    border-radius: 40px;
+}
+
+.team-item .team-social .btn:hover {
+    color: #FFFFFF;
+    background: var(--primary);
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.testimonial-carousel::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 300px;
+    }
+}
+
+.testimonial-carousel .owl-item .testimonial-text {
+    background: var(--light);
+    transform: scale(.8);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+    background: var(--primary);
+    transform: scale(1);
+}
+
+.testimonial-carousel .owl-item .testimonial-text *,
+.testimonial-carousel .owl-item .testimonial-item img {
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    color: var(--light) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item img {
+    background: var(--primary) !important;
+} 
+
+.testimonial-carousel .owl-nav {
+    position: absolute;
+    width: 350px;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: .5s;
+    z-index: 1;
+}
+
+.testimonial-carousel:hover .owl-nav {
+    width: 300px;
+    opacity: 1;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    position: relative;
+    color: var(--primary);
+    font-size: 45px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    color: var(--dark);
+}
+
+
+/*** Footer ***/
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: rgba(255,255,255,0.5);
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: rgba(255,255,255,0.5);
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .btn.btn-square {
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.footer .btn.btn-square:hover {
+    color: #fff;
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--secondary);
+}
+
+.footer .copyright a:hover {
+    color: var(--primary);
+}
+
+/* === Footer Logo Styling === */
+
+.footer-logo {
+    width: 220px;          /* fixed width for consistency */
+    height: auto;          /* maintain aspect ratio */
+    display: block;
+    object-fit: contain;   /* ensure entire logo fits inside the box */
+    background-color: transparent;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Make input focus outline green */
+.form-control:focus {
+    border-color: #4CDA64 !important;
+    box-shadow: 0 0 0 0.2rem rgba(76, 218, 100, 0.25) !important;
+}
+
+/* Dropdown items hover & active */
+.navbar .dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus,
+.navbar .dropdown-menu .dropdown-item.active {
+    color: #4CDA64 !important;
+    background-color: rgba(76, 218, 100, 0.1) !important; 
+}
+
+/* === Progress bar brand color (green) === */
+.causes-item .progress .progress-bar {
+    background-color: #4CDA64 !important; /* green bar */
+}
+
+.causes-item .progress .progress-bar span {
+    background-color: #4CDA64 !important; /* green percentage label */
+    color: #ffffff !important;
+}
+
+.causes-item p, .causes-item ul {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.causes-item ul {
+  padding-left: 1.2rem;
+}
+.causes-item ul li {
+  margin-bottom: 0.4rem;
+}
+
+/* === Program / Causes Image Styling === */
+.causes-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9; 
+  object-fit: cover; 
+  border-bottom: 3px solid var(--primary); 
+  border-radius: 6px 6px 0 0;
+  display: block;
+}
+
+
+.causes-item .text-center {
+  padding-top: 0;
+}
+
+.causes-item h4 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: var(--dark);
+}
+
+.causes-item ul {
+  padding-left: 1.2rem;
+  text-align: left;
+}
+
+
+/* === Green underline Style === */
+.underline-green {
+  display: inline-block; 
+  position: relative;
+  padding-bottom: 12px; 
+  padding-top: 12px;
+}
+
+.underline-green::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; 
+  height: 3px; 
+  background-color: var(--primary); 
+  border-radius: 2px;
+}
+
+/* === Emphasized first sentence in program cards === */
+.highlight-text {
+  display: block; /* puts it on its own line */
+  font-weight: 600; /* makes it stand out */
+  color: var(--dark); /* a dark green to match your brand theme */
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+
+
+
+/* === Custom Objectives Font Size === */
+.objectives-list {
+    font-size: 0.92rem; 
+    line-height: 1.6;   
+}
+.objectives-list li {
+    margin-bottom: 0.6rem;
+}
+
+
+
+/* Impact (Service) Cards Progress Bar */
+.service-item .progress {
+  height: 5px;
+  border-radius: 0;
+  overflow: visible;
+  background-color: #e9ecef;
+}
+
+.service-item .progress .progress-bar {
+  position: relative;
+  overflow: visible;
+  width: 0;
+  border-radius: 0;
+  transition: 5s ease-in-out;
+}
+
+.service-item .progress .progress-bar span {
+  position: absolute;
+  top: -7px;
+  right: 0;
+  width: 40px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Team Section Customization */
+.team-item {
+  transition: all 0.4s ease;
+  border: 1px solid #eee;
+  background-color: #fff;
+  border-radius: 12px;
+  max-width: 320px; /* reduces card width */
+  margin: 0 auto; /* center each card */
+}
+
+.team-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Fixed-size images with reduced dimensions */
+.team-img {
+  width: 280px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.5s ease;
+  margin: 15px 0;
+}
+
+.team-item:hover .team-img {
+  transform: scale(1.05);
+}
+
+/* Text and layout inside cards */
+.team-text {
+  padding: 20px 15px;
+}
+
+.team-text h5 {
+  font-size: 1.1rem;
+}
+
+.team-text p {
+  font-size: 0.95rem;
+}
+
+/* Social button style */
+.team-social .btn {
+  margin: 0 4px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  padding: 6px 10px;
+}
+
+.team-social .btn:hover {
+  background-color: var(--bs-primary);
+  color: #fff;
+  border-color: var(--bs-primary);
+}
+
+/* Spacing between cards */
+.row.gx-5 {
+  --bs-gutter-x: 2.5rem;
+}
+
+.row.gy-5 {
+  --bs-gutter-y: 2.5rem;
+}
+
+/* Ensure cards stay centered */
+.row.justify-content-center {
+  justify-content: center !important;
+}
+
+/* Team Carousel Styling */
+.team-carousel .team-item {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.team-carousel .team-img {
+  width: 240px;
+  height: 280px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Position and style for arrows */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-nav.prev {
+  left: -25px; /* adjust to move arrow closer or farther */
+}
+
+.carousel-nav.next {
+  right: -25px;
+}
+
+.carousel-nav:hover {
+  background: #fff;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
