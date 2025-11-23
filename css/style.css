@@ -248,8 +248,8 @@
 
 .page-header {
     padding-top: 14rem;
-    padding-bottom: 14rem;
-    background: linear-gradient(rgba(0, 29, 35, 0.336), rgba(0, 29, 35, .8)), url(../img/Digitalliteracycohort1.jpg) center center no-repeat;
+    padding-bottom: 19rem;
+    background: linear-gradient(rgba(0, 29, 35, 0.336), rgba(0, 29, 35, .8)), url(../img/Elimishacoverpage.jpg) center top no-repeat;
     background-size: cover;
 }
 
